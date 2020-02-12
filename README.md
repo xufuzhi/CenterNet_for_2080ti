@@ -44,6 +44,10 @@ vim src/cuda/dcn_v2_cuda.cu
 Then uncomment the following code:  
 ```
 	//extern THCState *state;
+	
+```
+And add a line:
+```
 	THCState *state = at::globalContext().lazyInitCUDA();
 ```
 python setup.py build develop  
