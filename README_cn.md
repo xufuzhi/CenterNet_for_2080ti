@@ -43,9 +43,12 @@ vim src/cuda/dcn_v2_cuda.cu
 Then uncomment the following code:  
 ```
 	//extern THCState *state;
-and add:
+```
+添加一行:
+```
 	THCState *state = at::globalContext().lazyInitCUDA();
 ```
+在此目录下运行命令：
 python setup.py build develop  
 
 ## 安装 COCOAPI
